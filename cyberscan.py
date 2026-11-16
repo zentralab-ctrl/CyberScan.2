@@ -145,11 +145,9 @@ def port_check(host: str, start: int | None = None, end: int | None = None,
     if start is None and end is None:
         ports = sorted(COMMON_PORTS)
         mode = "common"
-        
     elif start is not None and end is not None:
         if not (1 <= start <= 65535 and 1 <= end <= 65535 and start <= end):
-            raise ValueError(...)
-            
+            raise ValueError(...)  
         if end - start + 1 > 65535:
             raise ValueError(...)
         ports = list(range(start, end + 1))
