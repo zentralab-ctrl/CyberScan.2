@@ -149,7 +149,6 @@ def port_check(host: str, start: int | None = None, end: int | None = None,
         if not (1 <= start <= 65535 and 1 <= end <= 65535 and start <= end):
             raise ValueError("Rentang port tidak valid.")
         if end - start + 1 > 65535:
-        if end - start + 1 > 65535:
             raise ValueError(...)
         ports = list(range(start, end + 1))
         mode = "custom"
